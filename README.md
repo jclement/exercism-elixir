@@ -1,6 +1,6 @@
-# My Exercism Elixir DevContainer!
+# My Exercism Elixir Project
 
-## Initial setup
+## Initial DevContainer setup
 Get your token from here:
 https://exercism.org/settings/api_cli
 
