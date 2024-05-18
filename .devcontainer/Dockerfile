@@ -18,13 +18,8 @@ RUN sudo -u vscode bash -c 'source /opt/asdf/asdf.sh && asdf plugin-add erlang h
 RUN sudo -u vscode bash -c "source /opt/asdf/asdf.sh && asdf install erlang $ERLANG_VERSION && asdf global erlang $ERLANG_VERSION"
 RUN sudo -u vscode bash -c 'source /opt/asdf/asdf.sh && asdf plugin-add elixir https://github.com/asdf-vm/asdf-elixir.git'
 RUN sudo -u vscode bash -c "source /opt/asdf/asdf.sh && asdf install elixir $ELIXIR_VERSION && asdf global elixir $ELIXIR_VERSION"
-
-# install exercism
-RUN curl -L -o /tmp/exercism.tgz https://github.com/exercism/cli/releases/download/v3.4.0/exercism-3.4.0-linux-arm64.tar.gz
-RUN tar -xzf /tmp/exercism.tgz -C /tmp
-RUN mv /tmp/exercism /usr/local/bin
-RUN rm -rf /tmp/exercism
-RUN rm /tmp/exercism.tgz
+RUN sudo -u vscode bash -c 'source /opt/asdf/asdf.sh && asdf plugin-add exercism https://github.com/gorosz/asdf-exercism.git'
+RUN sudo -u vscode bash -c "source /opt/asdf/asdf.sh && asdf install exercism latest && asdf global exercism latest"
 
 # locale
 ENV LANG en_US.UTF-8
